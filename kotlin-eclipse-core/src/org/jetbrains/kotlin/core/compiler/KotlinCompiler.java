@@ -34,6 +34,7 @@ import org.jetbrains.kotlin.cli.common.messages.CompilerMessageLocation;
 import org.jetbrains.kotlin.cli.common.messages.CompilerMessageSeverity;
 import org.jetbrains.kotlin.cli.common.messages.MessageCollector;
 import org.jetbrains.kotlin.cli.jvm.K2JVMCompiler;
+import org.jetbrains.kotlin.core.compiler.KotlinCompiler.KotlinCompilerResult;
 import org.jetbrains.kotlin.core.launch.CompilerOutputData;
 import org.jetbrains.kotlin.core.launch.CompilerOutputElement;
 import org.jetbrains.kotlin.core.launch.CompilerOutputParser;
@@ -106,7 +107,6 @@ public class KotlinCompiler {
         List<String> command = new ArrayList<>();
         command.add("-kotlin-home");
         command.add(ProjectUtils.getKtHome());
-        command.add("-no-jdk");
         command.add("-no-stdlib"); // Because we add runtime into the classpath
 
         command.add("-jvm-target");
